@@ -22,13 +22,16 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Find the place"/>
                                 <connections>
                                     <action selector="findPlaceButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2BY-wg-o0f"/>
-                                    <segue destination="NHl-1D-gMC" kind="show" id="WnJ-Af-0cb"/>
+                                    <segue destination="NHl-1D-gMC" kind="show" identifier="showPlace" id="WnJ-Af-0cb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plese, enter your Zip code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-kI-3gF">
                                 <rect key="frame" x="108" y="390" width="198" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZNG-oi-pxB"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the place In US by Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD6-bm-0Iy">
                                 <rect key="frame" x="64" y="106" width="286" height="24"/>
