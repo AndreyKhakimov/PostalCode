@@ -13,6 +13,10 @@
 		4228B7BB2752BD3A00D10B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4228B7B92752BD3A00D10B33 /* Main.storyboard */; };
 		4228B7BD2752BD3B00D10B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4228B7BC2752BD3B00D10B33 /* Assets.xcassets */; };
 		4228B7C02752BD3B00D10B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4228B7BE2752BD3B00D10B33 /* LaunchScreen.storyboard */; };
+		4228B7C82752C51500D10B33 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228B7C72752C51500D10B33 /* PlaceViewController.swift */; };
+		4228B7CA2752C68400D10B33 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228B7C92752C68400D10B33 /* Place.swift */; };
+		4228B7CD2753836E00D10B33 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228B7CC2753836E00D10B33 /* NetworkManager.swift */; };
+		4228B7CF2753930000D10B33 /* CurrentPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228B7CE2753930000D10B33 /* CurrentPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4228B7BC2752BD3B00D10B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4228B7BF2752BD3B00D10B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4228B7C12752BD3B00D10B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4228B7C72752C51500D10B33 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		4228B7C92752C68400D10B33 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		4228B7CC2753836E00D10B33 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4228B7CE2753930000D10B33 /* CurrentPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +67,24 @@
 				4228B7B32752BD3A00D10B33 /* AppDelegate.swift */,
 				4228B7B52752BD3A00D10B33 /* SceneDelegate.swift */,
 				4228B7B72752BD3A00D10B33 /* ViewController.swift */,
+				4228B7C72752C51500D10B33 /* PlaceViewController.swift */,
+				4228B7CB2753834A00D10B33 /* Models */,
 				4228B7B92752BD3A00D10B33 /* Main.storyboard */,
 				4228B7BC2752BD3B00D10B33 /* Assets.xcassets */,
 				4228B7BE2752BD3B00D10B33 /* LaunchScreen.storyboard */,
 				4228B7C12752BD3B00D10B33 /* Info.plist */,
 			);
 			path = PostalCode;
+			sourceTree = "<group>";
+		};
+		4228B7CB2753834A00D10B33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4228B7C92752C68400D10B33 /* Place.swift */,
+				4228B7CC2753836E00D10B33 /* NetworkManager.swift */,
+				4228B7CE2753930000D10B33 /* CurrentPlace.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4228B7CF2753930000D10B33 /* CurrentPlace.swift in Sources */,
+				4228B7CD2753836E00D10B33 /* NetworkManager.swift in Sources */,
+				4228B7C82752C51500D10B33 /* PlaceViewController.swift in Sources */,
 				4228B7B82752BD3A00D10B33 /* ViewController.swift in Sources */,
 				4228B7B42752BD3A00D10B33 /* AppDelegate.swift in Sources */,
 				4228B7B62752BD3A00D10B33 /* SceneDelegate.swift in Sources */,
+				4228B7CA2752C68400D10B33 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
