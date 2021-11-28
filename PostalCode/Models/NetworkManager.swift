@@ -29,7 +29,7 @@ class NetworkManager {
     
     func parseJSON(withData data: Data) -> CurrentPlace? {
         do {
-            let currentPlaceData = try JSONDecoder().decode(Place.self, from: data)
+            let currentPlaceData = try JSONDecoder().decode(PlaceData.self, from: data)
             guard let currentPlace = CurrentPlace(currentPlace: currentPlaceData) else {
                 return nil
             }

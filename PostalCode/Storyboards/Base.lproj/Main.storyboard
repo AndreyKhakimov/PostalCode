@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tTt-YP-84r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PostalCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PostalCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJz-vH-FMR">
-                                <rect key="frame" x="149.5" y="432.5" width="115" height="31"/>
+                                <rect key="frame" x="156.66666666666666" y="447.66666666666669" width="114.99999999999997" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Find the place"/>
                                 <connections>
@@ -26,15 +26,15 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plese, enter your Zip code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-kI-3gF">
-                                <rect key="frame" x="108" y="390" width="198" height="34"/>
+                                <rect key="frame" x="115" y="405" width="198" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZNG-oi-pxB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ajz-nJ-Ant"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the place In US by Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD6-bm-0Iy">
-                                <rect key="frame" x="64" y="106" width="286" height="24"/>
+                                <rect key="frame" x="71" y="106" width="286" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,35 +65,42 @@
             <objects>
                 <viewController id="NHl-1D-gMC" customClass="PlaceViewController" customModule="PostalCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zB3-Wx-y8n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-4X-fCD">
-                                <rect key="frame" x="187" y="437.5" width="40" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-4X-fCD">
+                                <rect key="frame" x="194" y="453" width="40" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ5-Id-cVv">
-                                <rect key="frame" x="191.5" y="524" width="31" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ5-Id-cVv">
+                                <rect key="frame" x="198.66666666666666" y="513.33333333333337" width="31" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-Mz-7ZQ">
+                                <rect key="frame" x="204" y="88" width="20" height="20"/>
+                                <color key="color" systemColor="systemGrayColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3c-e8-T7I"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="yOu-4X-fCD" firstAttribute="centerY" secondItem="zB3-Wx-y8n" secondAttribute="centerY" id="Jik-20-VHg"/>
                             <constraint firstItem="OZ5-Id-cVv" firstAttribute="centerX" secondItem="zB3-Wx-y8n" secondAttribute="centerX" id="MLh-vv-vP3"/>
-                            <constraint firstItem="OZ5-Id-cVv" firstAttribute="top" secondItem="yOu-4X-fCD" secondAttribute="bottom" constant="65.5" id="nlO-ae-tfu"/>
+                            <constraint firstItem="8ED-Mz-7ZQ" firstAttribute="top" secondItem="X3c-e8-T7I" secondAttribute="top" id="Tcf-6k-Qag"/>
+                            <constraint firstItem="OZ5-Id-cVv" firstAttribute="top" secondItem="yOu-4X-fCD" secondAttribute="bottom" constant="40" id="nlO-ae-tfu"/>
                             <constraint firstItem="yOu-4X-fCD" firstAttribute="centerX" secondItem="zB3-Wx-y8n" secondAttribute="centerX" id="rFy-fx-KBm"/>
+                            <constraint firstItem="8ED-Mz-7ZQ" firstAttribute="centerX" secondItem="zB3-Wx-y8n" secondAttribute="centerX" id="rIj-hq-3QC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Oyz-Ys-Txd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="eG3-q4-aYQ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="8ED-Mz-7ZQ" id="BM2-QJ-MQp"/>
                         <outlet property="cityLabel" destination="OZ5-Id-cVv" id="EGo-bW-BTH"/>
                         <outlet property="stateLabel" destination="yOu-4X-fCD" id="UkW-Ut-7QL"/>
                     </connections>
@@ -108,7 +115,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tTt-YP-84r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLf-rs-dgD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -124,6 +131,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
