@@ -13,11 +13,6 @@ class MainViewController: UIViewController {
     
     let networkManager = NetworkManager()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let placeVC = segue.destination as? PlaceViewController else { return }
         placeVC.networkManager = networkManager

@@ -64,10 +64,10 @@
 		4228B7B22752BD3A00D10B33 /* PostalCode */ = {
 			isa = PBXGroup;
 			children = (
-				4228B7D12754313900D10B33 /* App */,
 				4228B7D02754311300D10B33 /* ViewControllers */,
-				4228B7CB2753834A00D10B33 /* Models */,
 				4228B7D22754341200D10B33 /* Storyboards */,
+				4228B7CB2753834A00D10B33 /* Models */,
+				4228B7D12754313900D10B33 /* App */,
 				4228B7D32754341D00D10B33 /* Resources */,
 			);
 			path = PostalCode;
