@@ -6,9 +6,11 @@
 //
 
 // MARK: - Place
-struct PlaceData: Codable {
-    let postCode, country, countryAbbreviation: String
-    let places: [PlaceElement]
+struct PlaceData: Decodable {
+    
+    let state: String
+    let stateAbbreviation: String
+    let city: String
 
     enum CodingKeys: String, CodingKey {
         case postCode = "post code"
@@ -16,18 +18,25 @@ struct PlaceData: Codable {
         case countryAbbreviation = "country abbreviation"
         case places
     }
-}
-
-// MARK: - PlaceElement
-struct PlaceElement: Codable {
-    let placeName, longitude, state, stateAbbreviation: String
-    let latitude: String
-
-    enum CodingKeys: String, CodingKey {
+    
+    enum ElementCodingKeys: String, CodingKey {
         case placeName = "place name"
         case longitude, state
         case stateAbbreviation = "state abbreviation"
         case latitude
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        var elements = try container.nestedUnkeyedContainer(forKey: .places)
+        let firstElement = try elements.nestedContainer(keyedBy: ElementCodingKeys.self)
+        let state = try firstElement.decode(String.self, forKey: .state)
+        let stateAbbreviation = try firstElement.decode(String.self, forKey: .stateAbbreviation)
+        let city = try firstElement.decode(String.self, forKey: .placeName)
+        
+        self.state = state
+        self.stateAbbreviation = stateAbbreviation
+        self.city = city
+    }
+    
 }
-

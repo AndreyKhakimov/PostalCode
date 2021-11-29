@@ -66,6 +66,7 @@
 			children = (
 				4228B7D02754311300D10B33 /* ViewControllers */,
 				4228B7D22754341200D10B33 /* Storyboards */,
+				4228B7D427552C3E00D10B33 /* Services */,
 				4228B7CB2753834A00D10B33 /* Models */,
 				4228B7D12754313900D10B33 /* App */,
 				4228B7D32754341D00D10B33 /* Resources */,
@@ -77,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				4228B7C92752C68400D10B33 /* PlaceData.swift */,
-				4228B7CC2753836E00D10B33 /* NetworkManager.swift */,
 				4228B7CE2753930000D10B33 /* CurrentPlace.swift */,
 			);
 			path = Models;
@@ -117,6 +117,14 @@
 				4228B7BC2752BD3B00D10B33 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4228B7D427552C3E00D10B33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4228B7CC2753836E00D10B33 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

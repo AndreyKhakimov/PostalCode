@@ -19,12 +19,12 @@ class PlaceViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        networkManager.onCompletion  = { currentPlace in
-            self.updateUIWith(place: currentPlace)
-        }
+//        networkManager.onCompletion  = { currentPlace in
+//            self.updateUIWith(place: currentPlace)
+//        }
     }
     
-    private func updateUIWith(place: CurrentPlace) {
+    private func updateUIWith(place: PlaceData) {
         DispatchQueue.main.async {
             self.stateLabel.text = "State: \(place.state)\n\n\nState abbreviation: \(place.stateAbbreviation)"
             self.cityLabel.text = "City: \(place.city)"

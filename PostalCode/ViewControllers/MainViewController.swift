@@ -20,15 +20,18 @@ class MainViewController: UIViewController {
     
     @IBAction func findPlaceButtonPressed(_ sender: Any?) {
         guard let inputZipCode = zipCodeTextfield.text, !inputZipCode.isEmpty else {
-            showAlert(with: "Text field is empty", and: "Plese, enter US Zip code")
+            showAlert(with: "Text field is empty", and: "Please, enter US Zip code")
             return
         }
         
         guard let zipCode = Int(inputZipCode), zipCode > 209 && zipCode < 99951 else {
-            showAlert(with: "This is not a Zip code", and: "Plese, enter US Zip code")
+            showAlert(with: "This is not a Zip code", and: "Please, enter US Zip code")
             return
         }
-        networkManager.fetchData(for: zipCodeTextfield.text ?? "10005")
+        let zip = zipCodeTextfield.text ?? "10005"
+        networkManager.sendRequest(endpoint: .zipCode(zip)) { (placeData: PlaceData?) in
+            print(placeData?.city)
+        }
     }
     
 }
