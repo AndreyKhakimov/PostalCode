@@ -39,16 +39,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codes Range 00210 : 99950" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-EE-X1f">
+                                <rect key="frame" x="104" y="151" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vD6-bm-0Iy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="297-3n-lmX"/>
+                            <constraint firstItem="qyg-EE-X1f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9fU-Ed-XSw"/>
                             <constraint firstItem="YJz-vH-FMR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LIg-Hc-4ZX"/>
                             <constraint firstItem="YJz-vH-FMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NJI-8u-nHU"/>
                             <constraint firstItem="N3H-kI-3gF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QDa-6B-Z1O"/>
                             <constraint firstItem="vD6-bm-0Iy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WK1-ec-4rY"/>
                             <constraint firstItem="YJz-vH-FMR" firstAttribute="top" secondItem="N3H-kI-3gF" secondAttribute="bottom" constant="8.5" id="tl2-pY-cVX"/>
+                            <constraint firstItem="qyg-EE-X1f" firstAttribute="top" secondItem="vD6-bm-0Iy" secondAttribute="bottom" constant="21" id="zXV-TM-XKV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eI1-H8-flV"/>
