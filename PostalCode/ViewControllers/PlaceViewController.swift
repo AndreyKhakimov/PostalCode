@@ -13,18 +13,20 @@ class PlaceViewController: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var networkManager: NetworkManager!
+    let networkManager = NetworkManager()
+    var zipCode: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        networkManager.onCompletion  = { currentPlace in
-            self.updateUIWith(place: currentPlace)
+        networkManager.sendRequest(endpoint: .zipCode(zipCode)) { [weak self] (placeData: Place?) in
+            guard let self = self, let placeData = placeData else { return }
+            self.updateUIWith(place: placeData)
         }
     }
     
-    private func updateUIWith(place: CurrentPlace) {
+    private func updateUIWith(place: Place) {
         DispatchQueue.main.async {
             self.stateLabel.text = "State: \(place.state)\n\n\nState abbreviation: \(place.stateAbbreviation)"
             self.cityLabel.text = "City: \(place.city)"
