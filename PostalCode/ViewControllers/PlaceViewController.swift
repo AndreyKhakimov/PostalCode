@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PlaceViewController: UIViewController {
     
@@ -20,9 +21,13 @@ class PlaceViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        networkManager.sendRequest(endpoint: .zipCode(zipCode)) { [weak self] (placeData: Place?) in
-            guard let self = self, let placeData = placeData else { return }
-            self.updateUIWith(place: placeData)
+//        networkManager.sendRequest(endpoint: .zipCode(zipCode)) { [weak self] (placeData: Place?) in
+//            guard let self = self, let placeData = placeData else { return }
+//            self.updateUIWith(place: placeData)
+//        }
+        networkManager.sendRequestAF(endpoint: .zipCode(zipCode)) { (placeData: Place?) in
+            guard let place = placeData else { return }
+            self.updateUIWith(place: place)
         }
     }
     

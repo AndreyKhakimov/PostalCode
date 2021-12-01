@@ -25,6 +25,12 @@ struct Place: Decodable {
         case latitude
     }
     
+    init(state: String, stateAbbreviation: String, city: String) {
+        self.state = state
+        self.stateAbbreviation = stateAbbreviation
+        self.city = city
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var elements = try container.nestedUnkeyedContainer(forKey: .places)

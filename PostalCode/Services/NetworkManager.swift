@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkManager {
     
@@ -34,10 +35,10 @@ class NetworkManager {
         var request = URLRequest(url: endpoint.url)
         request.httpMethod = endpoint.httpMethod
         
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             guard let self = self,
-                  let data = data,
-                  let response = response else {
+                  let data = data
+                   else {
                 print(error?.localizedDescription ?? "No error description")
                 completion(nil)
                 return
@@ -47,14 +48,35 @@ class NetworkManager {
             } else {
                 completion(nil)
             }
-            print(response)
         }.resume()
+    }
+    
+    func sendRequestAF(endpoint: Endpoints, completion: @escaping(Place?) -> Void) {
+        AF.request(endpoint.url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let placeInfo = value as? [String : Any] else { return }
+                    guard let placeDictionary = placeInfo["places"] as? [Any] else { return }
+                    guard let currentPlaceElement = placeDictionary.first as? [String : Any] else { return }
+                    let place = Place(
+                        state: currentPlaceElement["state"] as? String ?? "",
+                        stateAbbreviation: currentPlaceElement["state abbreviation"] as? String ?? "",
+                        city: currentPlaceElement["place name"] as? String ?? ""
+                    )
+                    completion(place)
+                    print(place)
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
     
     func parseJSON<Response: Decodable>(withData data: Data) -> Response? {
         do {
             let result = try JSONDecoder().decode(Response.self, from: data)
-            print(result)
+//            print(result)
             return result
         } catch let error {
             print(error.localizedDescription)
