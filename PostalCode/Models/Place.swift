@@ -25,6 +25,12 @@ struct Place: Decodable {
         case latitude
     }
     
+    init(state: String, stateAbbreviation: String, city: String) {
+        self.state = state
+        self.stateAbbreviation = stateAbbreviation
+        self.city = city
+    }
+    
     init(placeInfo: [String : Any]) {
         let placeDictionary = placeInfo["places"] as? [Any]
         let currentPlaceElement = placeDictionary?.first as? [String : Any]
@@ -43,6 +49,13 @@ struct Place: Decodable {
         self.state = state
         self.stateAbbreviation = stateAbbreviation
         self.city = city
+    }
+    
+    static func getPlace(from value: Any) -> Place {
+        guard let place = value as? [String : Any] else {
+            return Place(state: "Unknown", stateAbbreviation: "Unknown", city: "Unknown")
+        }
+        return Place(placeInfo: place)
     }
     
 }

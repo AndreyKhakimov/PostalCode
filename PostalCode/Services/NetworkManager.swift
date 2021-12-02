@@ -58,7 +58,7 @@ class NetworkManager {
                 switch dataResponse.result {
                 case .success(let value):
                     guard let placeInfo = value as? [String : Any] else { return }
-                    let place = Place(placeInfo: placeInfo)
+                    let place = Place.getPlace(from: placeInfo)
                     completion(place)
                     print(place)
                 case .failure(let error):
