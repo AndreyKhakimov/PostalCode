@@ -58,13 +58,7 @@ class NetworkManager {
                 switch dataResponse.result {
                 case .success(let value):
                     guard let placeInfo = value as? [String : Any] else { return }
-                    guard let placeDictionary = placeInfo["places"] as? [Any] else { return }
-                    guard let currentPlaceElement = placeDictionary.first as? [String : Any] else { return }
-                    let place = Place(
-                        state: currentPlaceElement["state"] as? String ?? "",
-                        stateAbbreviation: currentPlaceElement["state abbreviation"] as? String ?? "",
-                        city: currentPlaceElement["place name"] as? String ?? ""
-                    )
+                    let place = Place(placeInfo: placeInfo)
                     completion(place)
                     print(place)
                 case .failure(let error):

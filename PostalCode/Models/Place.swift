@@ -25,10 +25,12 @@ struct Place: Decodable {
         case latitude
     }
     
-    init(state: String, stateAbbreviation: String, city: String) {
-        self.state = state
-        self.stateAbbreviation = stateAbbreviation
-        self.city = city
+    init(placeInfo: [String : Any]) {
+        let placeDictionary = placeInfo["places"] as? [Any]
+        let currentPlaceElement = placeDictionary?.first as? [String : Any]
+        self.state = currentPlaceElement?["state"] as? String ?? ""
+        self.stateAbbreviation = currentPlaceElement?["state abbreviation"] as? String ?? ""
+        self.city = currentPlaceElement?["place name"] as? String ?? ""
     }
     
     init(from decoder: Decoder) throws {
